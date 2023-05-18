@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Divider } from "@chakra-ui/react";
 import "./footer.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,15 +8,19 @@ import { faAward, faExclamation } from '@fortawesome/free-solid-svg-icons';
 const Footer = () => {
 
     const [isOpen, setIsOpen] = useState(false);
-
+    const modalRef = useRef(null);
     const handleButtonClick = () => {
         setIsOpen(!isOpen);
     };
-
+    const handleBackgroundClick = (event: React.MouseEvent<HTMLDivElement>) => {
+        if (event.target === modalRef.current) {
+            setIsOpen(false);
+        }
+    };
     return (
         <>
             {!isOpen && <Divider></Divider>}
-            <div className={`footer-container ${isOpen ? 'open' : ''}`}>
+            <div onClick={handleBackgroundClick} ref={modalRef} className={`footer-container ${isOpen ? 'open' : ''}`}>
                 {isOpen &&
                     <div className='footer-modal-content'>
                         <span>Quiz Rules</span>
