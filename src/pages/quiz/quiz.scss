@@ -141,9 +141,16 @@
         .footer-container {
             position: absolute;
             display: flex;
+
             button {
                 align-self: center;
             }
         }
+    }
+
+    .complete {
+        background-color: var(--primary-color);
+        width: 100%;
+        height: 820px;
     }
 }

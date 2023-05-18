@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './quiz.scss';
 
 interface Option {
@@ -25,6 +25,24 @@ function Quiz({ quiz }: QuizComponentProps) {
     const [selectedOption, setSelectedOption] = useState('');
     const [correctAnswers, setCorrectAnswers] = useState(0);
     const [quizCompleted, setQuizCompleted] = useState(false);
+    const [timer, setTimer] = useState(60);
+    const [isRunning, setIsRunning] = useState(true);
+    useEffect(() => {
+        let interval: number;
+
+        if (isRunning) {
+            interval = setInterval(() => {
+                setTimer((prevTimer) => prevTimer - 1);
+            }, 1000);
+        }
+
+        if (timer === 0) {
+            setIsRunning(false);
+            setQuizCompleted(true)
+        }
+
+        return () => clearInterval(interval);
+    }, [isRunning, timer]);
 
     const handleOptionSelection = (optionValue: string) => {
         setSelectedOption(optionValue);
@@ -49,13 +67,15 @@ function Quiz({ quiz }: QuizComponentProps) {
     const currentQuestion = quiz.quiz[currentQuestionIndex];
     const isAnswerCorrect = selectedOption === (currentQuestion && currentQuestion.answer[0]);
     const isOptionSelected = selectedOption !== '';
+    const minutes = Math.floor(timer / 60).toString().padStart(2, '0');
+    const seconds = (timer % 60).toString().padStart(2, '0');
 
     return (
         <div className="quiz-container">
-            <div className="counter-container">
+            {!quizCompleted && (<div className="counter-container">
                 <span>0{currentQuestionIndex + 1} / 05</span>
-                <span>10:00</span>
-            </div>
+                <span>{`${minutes}:${seconds}`}</span>
+            </div>)}
             <div className="question-container">
                 {!quizCompleted ? (
                     <>
@@ -87,17 +107,24 @@ function Quiz({ quiz }: QuizComponentProps) {
                                         </li>
                                     ))}
                             </ul>
-                        </div>
-                        <div className='footer-container'>
-                            <button onClick={handleNextQuestion} disabled={!isOptionSelected}>
-                                Next
-                            </button>
+                            <div className='footer-container'>
+                                <button onClick={handleNextQuestion} disabled={!isOptionSelected}>
+                                    Next
+                                </button>
+                            </div>
                         </div>
                     </>
                 ) : (
-                    <div className="complete">
-                        <p>Quiz completed! Correct answers: {correctAnswers}</p>
-                    </div>
+                    <>
+                        <div className="complete">
+                            <p>Quiz completed! Correct answers: {correctAnswers}</p>
+                        </div>
+                        <div className='footer-container'>
+                            <button onClick={handleNextQuestion} >
+                                Check Result
+                            </button>
+                        </div>
+                    </>
                 )}
             </div>
         </div>
