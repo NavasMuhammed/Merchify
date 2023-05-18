@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import { Divider } from "@chakra-ui/react";
 import "./footer.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faIdBadge, faQuestionCircle, faTimesCircle } from '@fortawesome/free-regular-svg-icons';
+import { faClock, faQuestionCircle, } from '@fortawesome/free-regular-svg-icons';
 import { faAward, faExclamation } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
