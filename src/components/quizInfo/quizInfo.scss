@@ -79,18 +79,50 @@
     }
 
     .description-content {
-       text-align: left;
-       padding: 6px 18px;   
-       span{
-              font-size: 15px;
-              font-weight: 500;
-              color: #423D55;
-       }
-       button{
-        font-size: 14px;
-        font-weight: 700;
-        color: #129862;
-       }
+        text-align: left;
+        padding: 6px 18px;
+
+        span {
+            font-size: 15px;
+            font-weight: 500;
+            color: #423D55;
+        }
+
+        button {
+            font-size: 14px;
+            font-weight: 700;
+            color: #129862;
+        }
     }
 
+    .quiz-includes {
+        display: flex;
+        flex-direction: column;
+        padding: 14px 18px;
+        gap: 15px;
+
+        .quiz-includes-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #423D55;
+            margin-bottom: -8px;
+        }
+
+        >div {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            svg {
+                height: 18px;
+                width: 18px;
+            }
+
+            span {
+                font-size: 14px;
+                font-weight: 500;
+                color: #423D55;
+            }
+
+        }
+    }
 }

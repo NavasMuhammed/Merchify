@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComment, faBookmark, faUser } from "@fortawesome/free-regular-svg-icons";
+import { faComment, faBookmark, faUser, faFile, faSquareCaretDown, faClock, faQuestionCircle, } from "@fortawesome/free-regular-svg-icons";
 import "./quizInfo.scss";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { Avatar, AvatarGroup } from '@chakra-ui/react'
@@ -75,6 +75,33 @@ const QuizInfo = () => {
                             {showFullText ? 'Read Less' : 'Read More'}
                         </button>
                     )}
+                </div>
+            </div>
+            <div className="quiz-includes">
+                <div className="quiz-includes-title">This Quiz Includes</div>
+                <div>
+                    <FontAwesomeIcon icon={faFile} />
+                    <span>
+                        50% Passing Percentage
+                    </span>
+                </div>
+                <div>
+                    <FontAwesomeIcon icon={faQuestionCircle} />
+                    <span>
+                        5 Questions
+                    </span>
+                </div>
+                <div>
+                    <FontAwesomeIcon icon={faClock} />
+                    <span>
+                        10 Mins
+                    </span>
+                </div>
+                <div>
+                    <FontAwesomeIcon icon={faSquareCaretDown} />
+                    <span>
+                        1 Attempt
+                    </span>
                 </div>
             </div>
         </div>
