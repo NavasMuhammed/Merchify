@@ -4,6 +4,7 @@ import "./footer.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faQuestionCircle, } from '@fortawesome/free-regular-svg-icons';
 import { faAward, faExclamation } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
 
@@ -16,6 +17,10 @@ const Footer = () => {
         if (event.target === modalRef.current) {
             setIsOpen(false);
         }
+    };
+    const navigate = useNavigate();
+    const handleStart = () => {
+        navigate('/quiz');
     };
     return (
         <>
@@ -54,7 +59,7 @@ const Footer = () => {
                     </div>
                 }
                 {isOpen ?
-                    <button onClick={handleButtonClick}>Start</button> :
+                    <button onClick={handleStart}>Start</button> :
                     <button onClick={handleButtonClick}>Take Quiz</button>
 
                 }

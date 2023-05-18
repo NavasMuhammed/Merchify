@@ -1,0 +1,149 @@
+.quiz-container {
+
+    padding: 25px;
+    height: 820px;
+    background-color: #EDF1F7;
+
+    .counter-container {
+        display: flex;
+        justify-content: space-between;
+
+        >span {
+            font-size: 13px;
+            font-weight: 600;
+            color: #fff;
+            padding: 2px 15px;
+            background-color: #5bb185d6;
+            border-radius: 30px;
+        }
+
+        >span+span {
+            background-color: #B079D1;
+        }
+    }
+
+    .question-container {
+        text-align: left;
+        padding: 16px 6px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+
+        .question-wrapper {
+            span {
+                font-size: 16px;
+                font-weight: 400;
+                color: #3B3749;
+            }
+        }
+
+        .option-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            // margin-top: 10px;
+
+            .option {
+                box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+                background-color: #fff;
+                display: flex;
+                gap: 0px;
+                margin-bottom: 20px;
+                align-items: center;
+                margin-left: 15px;
+                padding: 20px 20px;
+                max-width: 90%;
+                text-align: left;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: #EFF1F4;
+                }
+
+                &.correct {
+                    background-color: #5bb185d6;
+                    color: #fff;
+                }
+
+                &.incorrect {
+                    background-color: #B079D1;
+                    color: #fff;
+                }
+
+                &.selected {
+                    background-color: #EFF1F4;
+                }
+
+                &.selected.correct {
+                    background-color: #5bb185d6;
+                    color: #fff;
+                }
+
+                &.selected.incorrect {
+                    background-color: #B079D1;
+                    color: #fff;
+                }
+
+                svg {
+                    font-size: 25px;
+                    width: 40px;
+                    height: 40px;
+                    background-color: #EFF1F4;
+                    padding: 10px;
+                    border-radius: 50px;
+                }
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    span {
+                        font-size: 16px;
+                        font-weight: 700;
+                    }
+
+                    span+span {
+                        font-size: 16px;
+                        font-weight: 400;
+                    }
+                }
+            }
+
+            .option-item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+
+                label {
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+
+                .box {
+                    padding: 5px 10px;
+                    border: 1px solid #1a1919b6;
+                    border-radius: 4px;
+                    margin-right: 15px;
+                    cursor: pointer;
+
+                    &.selected {
+                        background-color: #B079D1;
+                    }
+                }
+            }
+        }
+
+        .footer-container {
+            position: absolute;
+            display: flex;
+            button {
+                align-self: center;
+            }
+        }
+    }
+}

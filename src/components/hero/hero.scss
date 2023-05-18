@@ -8,6 +8,7 @@
     align-items: flex-start;
     margin-top: 54px;
     padding: 0px 6px;
+
     .hero-title {
         flex: 1;
         font-family: 'Rubik', sans-serif;
@@ -16,11 +17,11 @@
         padding: 50px 10px;
 
         #violet {
-            color: #75189F;
+            color: var(--primary);
         }
 
         #green {
-            color: #129862;
+            color: var(--secondary);
         }
 
         >div {
