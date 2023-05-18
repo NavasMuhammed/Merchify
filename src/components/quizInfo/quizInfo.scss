@@ -1,0 +1,128 @@
+.quiz-info-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0px;
+    color: #423D55;
+    height: 700px;
+    .main-title {
+        align-self: flex-start;
+        font-weight: 700;
+        font-size: 25px;
+        color: #423D55;
+        padding: 0px 10px;
+
+    }
+
+    #faStar {
+        color: #F9BD07
+    }
+
+    .main-content {
+        display: flex;
+        padding: 12px;
+
+        .main-content-left {
+            flex: 1;
+            display: flex;
+            gap: 18px;
+            flex-direction: column;
+            padding-left: 5px;
+
+            >div {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+
+                svg {
+                    height: 16px;
+                    width: 16px;
+                }
+
+                span {
+                    font-weight: 700;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .main-content-right {
+            flex: .5;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+
+            .section {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 3px;
+
+                span {
+                    background-color: #e7cff4;
+
+                }
+
+                >span {
+                    font-weight: 500;
+                    font-size: 12px;
+                    color: #3B3749;
+                    background-color: transparent;
+                }
+
+                .stars {
+                    font-size: 12px;
+                    display: flex;
+                    gap: 5px;
+                }
+            }
+        }
+    }
+
+    .description-content {
+        text-align: left;
+        padding: 6px 18px;
+
+        span {
+            font-size: 15px;
+            font-weight: 500;
+            color: #423D55;
+        }
+
+        button {
+            font-size: 14px;
+            font-weight: 700;
+            color: #129862;
+        }
+    }
+
+    .quiz-includes {
+        display: flex;
+        flex-direction: column;
+        padding: 14px 18px;
+        gap: 15px;
+
+        .quiz-includes-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #423D55;
+            margin-bottom: -8px;
+        }
+
+        >div {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            svg {
+                height: 18px;
+                width: 18px;
+            }
+
+            span {
+                font-size: 14px;
+                font-weight: 500;
+                color: #423D55;
+            }
+
+        }
+    }
+}
