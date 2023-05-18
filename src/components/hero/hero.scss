@@ -30,10 +30,12 @@
 
     .hero-image {
         flex: 1;
+
         img {
             width: 120px;
             object-fit: contain;
         }
+
         align-self: flex-end;
     }
 }
