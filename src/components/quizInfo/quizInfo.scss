@@ -4,6 +4,7 @@
     padding: 20px 6px;
     color: #423D55;
     height: 700px;
+
     .main-title {
         align-self: flex-start;
         font-weight: 700;
@@ -91,7 +92,7 @@
         button {
             font-size: 14px;
             font-weight: 700;
-            color: #129862;
+            color: var(--secondary);
         }
     }
 
@@ -112,6 +113,7 @@
             display: flex;
             gap: 10px;
             align-items: center;
+
             svg {
                 height: 18px;
                 width: 18px;
