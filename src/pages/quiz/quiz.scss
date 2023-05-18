@@ -1,7 +1,8 @@
 .quiz-container {
-
+    --primary: #75189F;
+    --secondary: #129862;
     padding: 25px;
-    height: 820px;
+    height: 100vh;
     background-color: #EDF1F7;
 
     .counter-container {
@@ -28,7 +29,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        height: 100%;
+        height: 80%;
 
         .question-wrapper {
             span {
@@ -148,9 +149,79 @@
         }
     }
 
-    .complete {
-        background-color: var(--primary-color);
-        width: 100%;
-        height: 820px;
+}
+
+.complete-container {
+    background-color: #75189F;
+    width: 100%;
+    height: 820px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .result-info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        
+        img {
+           
+            margin-top: 50px;
+            margin-bottom: -20px;
+            object-fit: contain;
+            width: 215px;
+            height: 260px;
+        }
+
+        div {
+            align-self: center;
+            padding: 6px 15px 6px 7px;
+            background: #0196AD;
+            border-radius: 55px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+
+            span {
+                font-size: 16px;
+                font-weight: 700;
+                color: #fff;
+            }
+
+            svg {
+                color: #fff;
+                width: 16px;
+                height: 16px;
+                background-color: #F9BD07;
+                border-radius: 50px;
+                padding: 5px;
+            }
+        }
+
+        p {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+        }
+    }
+    .bottom-info{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        text-align: left;
+        padding: 20px;
+        align-self: flex-end;
+        margin-top: auto;
+        margin-bottom: 60px;
+        span{
+            font-size: 14px;
+            font-weight: 400;
+            color: #fff;
+        }
+        p{
+            font-size: 12px;
+            font-weight: 200;
+            color: rgba(244, 244, 244, 0.694);
+        }
     }
 }
