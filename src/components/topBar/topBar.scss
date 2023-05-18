@@ -1,0 +1,17 @@
+.tb-container {
+    display: flex;
+    padding: 6px 6px 0px 6px;
+    justify-content: space-between;
+    align-items: center;
+    >div{
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+        img{
+            object-fit: contain;
+            width: 34px;
+            height: 34px;
+        }
+    }
+}
