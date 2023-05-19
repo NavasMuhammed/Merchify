@@ -1,10 +1,18 @@
-
+import TopBar from "../../components/topBar/topBar";
+import "./result.scss";
 
 
 
 const Result = () => {
     return (
-        <h1>result</h1>
+        <>
+            <TopBar />
+            <div className='footer-container'>
+                <button  >
+                    Answers
+                </button>
+            </div>
+        </>
     );
 };
 

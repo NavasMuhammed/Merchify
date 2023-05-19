@@ -30,6 +30,17 @@ function Quiz({ quiz }: QuizComponentProps) {
     const [quizCompleted, setQuizCompleted] = useState(false);
     const [timer, setTimer] = useState(60);
     const [isRunning, setIsRunning] = useState(true);
+    const [karma, setKarma] = useState(0);
+
+    useEffect(() => {
+        function generateRandomNumber(): number {
+            const min = 30;
+            const max = 50;
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        setKarma(generateRandomNumber());
+    }, []);
+
     useEffect(() => {
         let interval: number;
 
@@ -66,11 +77,7 @@ function Quiz({ quiz }: QuizComponentProps) {
             setCurrentQuestionIndex(prevCurrentQuestionIndex => prevCurrentQuestionIndex + 1);
         }
     };
-    function generateRandomNumber(): number {
-        const min = 30;
-        const max = 50;
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
+
 
     const currentQuestion = quiz.quiz[currentQuestionIndex];
     const isAnswerCorrect = selectedOption === (currentQuestion && currentQuestion.answer[0]);
@@ -141,7 +148,7 @@ function Quiz({ quiz }: QuizComponentProps) {
                         <img src="/assets/images/cat.png" alt="" />
                         <div>
                             <FontAwesomeIcon icon={faStar} />
-                            <span>{correctAnswers + generateRandomNumber()}</span>
+                            <span>{correctAnswers + karma}</span>
                         </div>
                         <p>Karma Point earned!</p>
                     </div>
